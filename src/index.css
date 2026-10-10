@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+:root {
+  --page: #ffffff; --card: #ffffff; --ink: #2b2a55; --mute: #7b7a99; --line: #ececf5;
+  --bubble: #ece9fb; --tile: #eef3fb; --accent: #5a6acb;
+}
+.dark {
+  --page: #15132b; --card: #1e1b38; --ink: #efeaff; --mute: #a9a5c8; --line: #322d52;
+  --bubble: #2b2650; --tile: #272447; --accent: #b6c2ff;
+}
+
+@layer base {
+  *, ::before, ::after { border-color: var(--line); }
+  html { font-size: 14px; }
+  body { margin: 0; font-family: Inter, system-ui, sans-serif; background: var(--page); color: var(--ink); transition: background-color .3s, color .3s; }
+}
+
+.muted { color: var(--mute); }
+.label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .18em; color: var(--mute); }
+.plan-row { animation: rowIn .5s both; }
+@keyframes rowIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
